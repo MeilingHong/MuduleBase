@@ -1,6 +1,7 @@
 package com.meiling.utils;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -98,7 +99,7 @@ public class TextViewUtil {
     /**
      * 使用资源引用的方式设置TextView的文字
      *
-     * @param textView 带设置的TextView
+     * @param textView 待设置的TextView
      * @param content  需要显示内容
      */
     public static void setTextViewContent(@Nullable TextView textView, @StringRes int content) {
@@ -106,6 +107,19 @@ public class TextViewUtil {
             return;
         }
         textView.setText(content);
+    }
+
+    /**
+     * 设置TextView内显示的文字
+     *
+     * @param textView 待设置的TextView
+     * @param content  需要显示内容
+     */
+    public static void setTextViewContent(@Nullable TextView textView, CharSequence content) {
+        if (textView == null) {
+            return;
+        }
+        textView.setText(TextUtils.isEmpty(content) ? "" : content);
     }
 }
 
