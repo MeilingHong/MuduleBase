@@ -8,6 +8,8 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 /**
@@ -93,5 +95,17 @@ public class TextViewUtil {
     }
 
 
+    /**
+     * 使用资源引用的方式设置TextView的文字
+     *
+     * @param textView 带设置的TextView
+     * @param content  需要显示内容
+     */
+    public static void setTextViewContent(@Nullable TextView textView, @StringRes int content) {
+        if (textView == null) {
+            return;
+        }
+        textView.setText(content);
+    }
 }
 
