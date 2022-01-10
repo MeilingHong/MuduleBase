@@ -40,4 +40,4 @@
 1.  创建项目
 2.  开源到Gitee/Github，仓库为公开仓库
 3.  发布release版本，指定版本号（建议版号为：1.0.0 形式）
-4.  打开https://jitpack.io/并发布release版本
+4.  打开 https://jitpack.io/ 并发布release版本
