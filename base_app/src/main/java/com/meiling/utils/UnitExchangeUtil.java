@@ -2,6 +2,8 @@ package com.meiling.utils;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 /**
  * 2022-01-07 17:24
  * @author marisareimu
@@ -14,7 +16,7 @@ public class UnitExchangeUtil {
      * @param dpValue 多少DP
      * @return 转换后的PX值
      */
-    public static int dip2px(Context context, float dpValue) {
+    public static int dip2px(@NonNull Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
@@ -26,7 +28,7 @@ public class UnitExchangeUtil {
      * @param pxValue 多少Px值
      * @return 转换后的DP值
      */
-    public static int px2dip(Context context, float pxValue) {
+    public static int px2dip(@NonNull Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
@@ -38,7 +40,7 @@ public class UnitExchangeUtil {
      * @param pxValue 多少Px值
      * @return 转换后的SP值
      */
-    public static int px2sp(Context context, float pxValue) {
+    public static int px2sp(@NonNull Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / scale + 0.5f);
     }
@@ -50,7 +52,7 @@ public class UnitExchangeUtil {
      * @param spValue 多少SP值
      * @return 转换后的PX值
      */
-    public static int sp2px(Context context, float spValue) {
+    public static int sp2px(@NonNull Context context, float spValue) {
         final float scale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * scale + 0.5f);
     }

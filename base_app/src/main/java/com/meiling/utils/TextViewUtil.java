@@ -31,7 +31,10 @@ public class TextViewUtil {
      *
      * @param textView 需要设置加粗效果的TextView
      */
-    public static void setFakeBoldText(@NonNull TextView textView) {
+    public static void setFakeBoldText(@Nullable TextView textView) {
+        if (textView == null) {
+            return;
+        }
         if (null == textView.getPaint()) {
             return;
         }
@@ -45,7 +48,10 @@ public class TextViewUtil {
      * @param textSizeUnit 指定大小使用的单位
      * @param textSize     指定大小使用的大小
      */
-    public static void setTextSize(@NonNull TextView textView, @NonNull TextSizeUnit textSizeUnit, @FloatRange(from = 0) float textSize) {
+    public static void setTextSize(@Nullable TextView textView, @NonNull TextSizeUnit textSizeUnit, @FloatRange(from = 0) float textSize) {
+        if (textView == null) {
+            return;
+        }
         textView.setTextSize(textSizeUnit == TextSizeUnit.PX ? TypedValue.COMPLEX_UNIT_PX :
                         textSizeUnit == TextSizeUnit.DIP ? TypedValue.COMPLEX_UNIT_DIP :
                                 textSizeUnit == TextSizeUnit.SP ? TypedValue.COMPLEX_UNIT_SP :
@@ -59,7 +65,10 @@ public class TextViewUtil {
      * @param textView 待设置的TextView
      * @param color    需要设置的颜色
      */
-    public static void setTextColor(@NonNull TextView textView, @ColorInt int color) {
+    public static void setTextColor(@Nullable TextView textView, @ColorInt int color) {
+        if (textView == null) {
+            return;
+        }
         textView.setTextColor(color);
     }
 
@@ -70,7 +79,10 @@ public class TextViewUtil {
      * @param mContext 上下文
      * @param color    需要设置的颜色【在资源中的位置】
      */
-    public static void setTextColor(@NonNull TextView textView, @NonNull Context mContext, @ColorRes int color) {
+    public static void setTextColor(@Nullable TextView textView, @NonNull Context mContext, @ColorRes int color) {
+        if (textView == null) {
+            return;
+        }
         textView.setTextColor(ContextCompat.getColor(mContext, color));
     }
 
@@ -80,7 +92,10 @@ public class TextViewUtil {
      * @param textView 待设置的TextView
      * @param color    需要设置的颜色
      */
-    public static void setHintColor(@NonNull TextView textView, @ColorInt int color) {
+    public static void setHintColor(@Nullable TextView textView, @ColorInt int color) {
+        if (textView == null) {
+            return;
+        }
         textView.setHintTextColor(color);
     }
 
@@ -91,7 +106,10 @@ public class TextViewUtil {
      * @param mContext 上下文
      * @param color    需要设置的颜色【在资源中的位置】
      */
-    public static void setHintColor(@NonNull TextView textView, @NonNull Context mContext, @ColorRes int color) {
+    public static void setHintColor(@Nullable TextView textView, @NonNull Context mContext, @ColorRes int color) {
+        if (textView == null) {
+            return;
+        }
         textView.setTextColor(ContextCompat.getColor(mContext, color));
     }
 
