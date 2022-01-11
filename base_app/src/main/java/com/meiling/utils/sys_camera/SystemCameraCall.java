@@ -8,13 +8,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 
-import java.io.File;
-import java.util.List;
-
 import androidx.activity.ComponentActivity;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * 2022-01-10 22:12
@@ -37,7 +37,7 @@ public class SystemCameraCall {
         void fileDirectoryEmptyOrNotExist();
     }
 
-    public static void callSystemCamera_Picture(@NonNull ComponentActivity mContext, File directory, String fileName, String authorityString, Callback callback, ActivityResultLauncher<Intent> activityResultLauncher) {
+    public static void callSystemCamera_Picture(@NonNull ComponentActivity mContext, File directory, String fileName, String authorityString, Callback callback, @NonNull ActivityResultLauncher<Intent> activityResultLauncher) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {// 动态权限检查，保证拥有必要的权限
             if (mContext.checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 if (callback != null) callback.noCameraPermission();
