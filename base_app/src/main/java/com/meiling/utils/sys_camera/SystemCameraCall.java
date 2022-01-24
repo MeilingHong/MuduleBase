@@ -55,6 +55,16 @@ public class SystemCameraCall {
         void fileDirectoryEmptyOrNotExist();// 目录对象为空或不存在【需要在调用前保证目录被创建出来】
     }
 
+    /**
+     * 调用系统拍照
+     *
+     * @param mContext               依赖的页面（Activity）
+     * @param directory              指定的目录
+     * @param fileName               指定的文件名
+     * @param authorityString        授权字符串（文件访问）
+     * @param callback               回调
+     * @param activityResultLauncher 启动器
+     */
     public static void callSystemCamera_Picture(@NonNull ComponentActivity mContext, File directory, String fileName, String authorityString, Callback callback, @NonNull ActivityResultLauncher<Intent> activityResultLauncher) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {// 动态权限检查，保证拥有必要的权限
             if (mContext.checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -95,7 +105,19 @@ public class SystemCameraCall {
         }
     }
 
-
+    /**
+     * 录像
+     * 需要额外验证是否针对所有系统都能够支持，在预览文件后可以获取到文件
+     *
+     * @param mContext               依赖的页面（Activity）
+     * @param directory              指定的目录
+     * @param fileName               指定的文件名
+     * @param authorityString        授权字符串（文件访问）
+     * @param videoTimeLimitSec      指定的文件，时间长度
+     * @param videoSizeBytes         指定的文件，文件大小
+     * @param callback               回调
+     * @param activityResultLauncher 启动器
+     */
     public static void callSystemCamera_Video(@NonNull ComponentActivity mContext, File directory, String fileName, String authorityString,
                                               Integer videoTimeLimitSec,
                                               Long videoSizeBytes,
