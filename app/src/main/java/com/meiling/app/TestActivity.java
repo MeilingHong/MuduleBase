@@ -167,7 +167,7 @@ public class TestActivity extends AppCompatActivity {
                     return;
                 }
                 SystemCameraCall.callSystemCamera_Video(TestActivity.this, getDirectory(),
-                        System.currentTimeMillis() + ".png", BaseConstant.authority, 60, 1024 * 1024 * 10L, mVideoCallback, activityResultLauncher);
+                        System.currentTimeMillis() + ".mp4", BaseConstant.authority, 60, 1024 * 1024 * 10L, mVideoCallback, activityResultLauncher);
             }
         });
     }

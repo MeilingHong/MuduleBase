@@ -134,7 +134,7 @@ public class SystemCameraCall {
             takeVideoIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);// 设置输出文件
             if (videoTimeLimitSec != null && videoTimeLimitSec > 0) takeVideoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, videoTimeLimitSec);// 设置文件限制---时长：单位为秒
             takeVideoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);// 设置文件限制---文件质量：此值在最低质量最小文件尺寸时是0，在最高质量最大文件尺寸时是１.
-            if (videoSizeBytes != null && videoSizeBytes > 0) takeVideoIntent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, videoSizeBytes);// 设置文件限制---文件大小：以字节为单位.
+            if (videoSizeBytes != null && videoSizeBytes > 0) takeVideoIntent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, videoSizeBytes);// 设置文件限制---文件大小：以字节为单位.---todo【测试发现设置的大小限制没有生效】
 
             List<ResolveInfo> resInfoList = mContext.getPackageManager().queryIntentActivities(takeVideoIntent, PackageManager.MATCH_DEFAULT_ONLY);
             for (ResolveInfo resolveInfo : resInfoList) {
